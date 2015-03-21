@@ -29,23 +29,24 @@
     <div class="container">
 
       <div class="row">
-
         <div class="col-xs-12">
-          <h1>Welcome</h1>
-          <p class="lead">Almost ready to start monitoring...</p>
-          <p>Are you happy to share your (anonymised) data?</p>
-          <input type="checkbox">
-          <!-- if checkbox is ticked show this -->
-          <form>
-            <div class="form-group">
-              <label for="userAge">Please enter your age</label>
-              <input type="number" class="form-control" id="userAge" placeholder="Age">
-            </div>
-          </form>
-          <!-- end checkbox optional section -->
-          <a class="btn btn-primary" href="/heatmap.html" role="button">Start</a>
+          <div class="heatmap">
+            <img src="https://walkit.com/wp-content/uploads/2009/02/west-london-aq-map-244x300.png">
+          </div>
         </div><!--/.col-xs-12-->
+      </div><!--/row-->
 
+      <div class="row">
+        <div class="col-xs-12">
+
+          <!-- show if no report ready -->
+          <!-- <p class="text-muted">Your report will be ready tonight</p> -->
+          <!-- end no report message -->
+
+            <p>Your report is ready</p>
+            <a class="btn btn-primary" href="/report.html" role="button">See report</a>
+
+        </div><!--/.col-xs-12-->
       </div><!--/row-->
 
     </div><!--/.container-->
