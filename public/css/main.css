@@ -104,3 +104,29 @@ p {
 	margin-top: 25vh;
 	margin-bottom: 10vh;
 }
+
+.specific-measures .progress {
+	margin-bottom: 1em;
+}
+
+.twitter-send h1 {
+	margin-top: 3em;
+	margin-bottom: 1.5em;
+}
+
+.twitter-send a {
+	margin-top: 3em;
+	margin-bottom: 1.5em;
+}
+
+.twitter-success img {
+	width: 30vw;
+	display: block;
+	margin-top: 30vh;
+	margin-bottom:1vh;
+	margin-right: auto;
+	margin-left: auto;
+}
+.twitter-success a {
+	margin-top: 2em;
+}
