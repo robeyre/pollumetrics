@@ -1,3 +1,75 @@
 .historical-graph img {
 	max-width: 100%;
 }
+
+p {
+	color: #2B3032;
+}
+
+.colour-red {
+	color: #CE5330;
+}
+
+.colour-blue {
+	color: #5BB1E2;
+}
+.colour-light-blue {
+	color: #E4F0F4;
+}
+
+.colour-yellow {
+	color: #E8D807;
+}
+
+.colour-dark {
+	color: #2B3032;
+}
+
+.background-red {
+	background-color: #CE5330;
+}
+
+.background-blue {
+	background-color: #5BB1E2;
+}
+.background-light-blue {
+	background-color: #E4F0F4;
+}
+
+.background-yellow {
+	background-color: #E8D807;
+}
+
+.background-dark {
+	background-color: #2B3032;
+}
+
+
+.index .logo {
+	width: 45%;
+	display: block;
+	margin: 8em auto 2em auto;
+}
+
+.index .lead {
+	margin-bottom: 3em;
+}
+
+#ageForm {
+	display: none;
+}
+
+
+
+.heatmap #googleMap {
+	margin-left: -15px;
+	height: 70vh;
+	width: 100vw;
+}
+
+.heatmap p.lead {
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+

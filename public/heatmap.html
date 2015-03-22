@@ -70,10 +70,10 @@
         var setupMap = function () {
             var defaultLatitude = 51.5277435;
             var defaultLongitude = -0.1284699;
-            if ((typeof(navigator) == 'undefined') || (typeof(navigator.geolocation) == 'undefined')) {
+            if (true || (typeof(navigator) == 'undefined') || (typeof(navigator.geolocation) == 'undefined')) {
                 showMap(defaultLatitude, defaultLongitude);
             } else {
-                navigator.getolocation.getCurrentPosition(
+                navigator.geolocation.getCurrentPosition(
                     function (position) {
                         showMap(position.coords.latitude, position.coords.longitude);
                     },
@@ -106,16 +106,15 @@
     </script>
   </head>
 
-  <body>
+  <body class="heatmap">
 
     <div class="container">
 
       <div class="row">
         <div class="col-xs-12">
-          <div class="heatmap">
             <!--img src="https://walkit.com/wp-content/uploads/2009/02/west-london-aq-map-244x300.png"-->
-            <div id="googleMap" style="width: 256px; height: 256px;"></div>
-          </div>
+
+            <div id="googleMap"></div>
         </div><!--/.col-xs-12-->
       </div><!--/row-->
 
@@ -126,8 +125,8 @@
           <!-- <p class="text-muted">Your report will be ready tonight</p> -->
           <!-- end no report message -->
 
-            <p>Your report is ready</p>
-            <a class="btn btn-primary" href="report.html" role="button">See report</a>
+            <p class="lead"><strong>Your report is ready</strong></p>
+            <a class="btn btn-primary btn-lg center-block" href="report.html" role="button">See report</a>
 
         </div><!--/.col-xs-12-->
       </div><!--/row-->
