@@ -2,7 +2,10 @@
 <widget xmlns = "http://www.w3.org/ns/widgets"
     xmlns:gap = "http://phonegap.com/ns/1.0"
     id = "app.pollumetrics.com"
-    version = "1.0.2">
+    version = "1.0.4"
+    android-versionCode="4"
+    versionCode="4"
+    >
 <name>Pollution Monitor</name>
 <description>Pollution Monitor</description>
 <author href="http://ricardo-aea.com" email="rob.eyre@ricardo-aea.com">Rob Eyre</author>
@@ -23,8 +26,8 @@
 <preference name="android-installLocation" value="auto" /> <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
 <!--
 Define a specific version of PhoneGap to build into your app.
-<preference name="phonegap-version" value="3.5.0" />
 -->
+<preference name="phonegap-version" value="3.6.3" />
 <!-- Plugins -->
 <!-- Core plugins -->
 <gap:plugin name="org.apache.cordova.battery-status" />
