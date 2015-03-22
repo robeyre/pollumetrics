@@ -72,4 +72,35 @@ p {
 	margin-bottom: 2em;
 }
 
+.air-quality-score{
+	height: 70vh;
+	width: 100vw;
+	color:white;
+	margin-top: 0;
+	margin-bottom: 2em;
+}
+.air-quality-score h1 {
+	font-size: 5em;
+	margin-top: 8rem;
+	margin-bottom: 0;
+}
+.air-quality-score h2 small {
+	margin-top: 0;
+	margin-bottom: 3em;
+	color: white
+}
 
+.buttons-holder {
+	position: absolute;
+	bottom: 2em;
+	width: 100%;
+	padding-right: 30px;
+}
+
+.twitter-login img {
+	display: block;
+	margin: 0 auto;
+	height: 18vw;
+	margin-top: 25vh;
+	margin-bottom: 10vh;
+}
