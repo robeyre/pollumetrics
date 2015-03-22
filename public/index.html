@@ -24,17 +24,25 @@
     <![endif]-->
   </head>
 
-  <body>
+  <body class="index">
 
     <div class="container">
 
       <div class="row">
 
         <div class="col-xs-12">
-          <h1>Welcome</h1>
-          <p class="lead">Almost ready to start monitoring...</p>
-          <p>Are you happy to share your (anonymised) data?</p>
-          <input type="checkbox">
+          <img class="logo" src="img/logo-polly.svg">
+          <p class="lead text-center">Almost ready to start monitoring...</p>
+          <hr>
+          <div class="row">
+            <div class="col-xs-9">
+              <p>Are you happy to share your (anonymised) data?</p>
+            </div>
+            <div class="col-xs-3">
+              <input type="checkbox">
+            </div>
+          </div>
+          <hr>
           <!-- if checkbox is ticked show this -->
           <form>
             <div class="form-group">
@@ -43,7 +51,7 @@
             </div>
           </form>
           <!-- end checkbox optional section -->
-          <a class="btn btn-primary" href="heatmap.html" role="button">Start</a>
+          <a class="btn btn-primary btn-lg center-block" href="heatmap.html" role="button">Start</a>
         </div><!--/.col-xs-12-->
 
       </div><!--/row-->
