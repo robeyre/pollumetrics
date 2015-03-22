@@ -63,6 +63,12 @@ if ($trs->length) {
     $result['PM10 Particles'] = getIndex((string) $xpath->evaluate('normalize-space(td[6])', $tr));
 }
 
-header('Content-Type: application/json');
-echo \json_encode($result);
+\header('Content-Type: application/json');
+
+$jsonStr = \json_encode($result);
+if (!empty($_REQUEST['jsonp'])) {
+    $jsonStr = $_REQUEST['jsonp'] . '(' . $jsonStr . ');';
+}
+\header('Content-Length: ' . \strlen($jsonStr));
+echo $jsonStr;
 
