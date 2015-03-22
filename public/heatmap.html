@@ -28,6 +28,8 @@
         var mapProp = {
             center: new google.maps.LatLng(51.5277435,-0.1284699),
             zoom: 14,
+            disableDefaultUI: true,
+            zoomControl: true,
             mapTypeId:google.maps.MapTypeId.ROADMAP
         };
         var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
@@ -49,7 +51,7 @@
                 );
                 */
                 return [
-                    'http://pollumetrics.localhost/localmap.php',
+                    'http://aeasolutions.co.uk/pollumetrics/public/localmap.php',
                     '?minLat=', minLatLong.lat(),
                     '&minLong=', minLatLong.lng(),
                     '&maxLat=', maxLatLong.lat(),
@@ -87,7 +89,7 @@
           <!-- end no report message -->
 
             <p>Your report is ready</p>
-            <a class="btn btn-primary" href="/report.html" role="button">See report</a>
+            <a class="btn btn-primary" href="report.html" role="button">See report</a>
 
         </div><!--/.col-xs-12-->
       </div><!--/row-->
