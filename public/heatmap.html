@@ -22,6 +22,48 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script>
+    function initialize() {
+        var mapProp = {
+            center: new google.maps.LatLng(51.5277435,-0.1284699),
+            zoom: 14,
+            mapTypeId:google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(51.5277435,-0.1284699)
+        });
+        marker.setMap(map);
+
+        var imageMapType = new google.maps.ImageMapType({
+            getTileUrl: function(coord, zoom) {
+                var proj = map.getProjection();
+                var tileSize = 256 / Math.pow(2,zoom);
+                var minLatLong = proj.fromPointToLatLng(new google.maps.Point(coord.x * tileSize, coord.y * tileSize));
+                var maxLatLong = proj.fromPointToLatLng(new google.maps.Point((coord.x + 1) * tileSize, (coord.y + 1) * tileSize));
+                /*
+                var tileBounds = new google.maps.LatLngBounds(
+                    proj.fromPointToLatLng(new google.maps.Point(coord.x * tileSize, (coord.y + 1) * tileSize)),
+                    proj.fromPointToLatLng(new google.maps.Point((coord.x + 1) * tileSize, coord.y * tileSize))
+                );
+                */
+                return [
+                    'http://pollumetrics.localhost/localmap.php',
+                    '?minLat=', minLatLong.lat(),
+                    '&minLong=', minLatLong.lng(),
+                    '&maxLat=', maxLatLong.lat(),
+                    '&maxLong=', maxLatLong.lng()
+                ].join('');
+            },
+            tileSize: new google.maps.Size(256, 256),
+            isPng: true
+        });
+
+        map.overlayMapTypes.push(imageMapType);
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
   </head>
 
   <body>
@@ -31,7 +73,8 @@
       <div class="row">
         <div class="col-xs-12">
           <div class="heatmap">
-            <img src="https://walkit.com/wp-content/uploads/2009/02/west-london-aq-map-244x300.png">
+            <!--img src="https://walkit.com/wp-content/uploads/2009/02/west-london-aq-map-244x300.png"-->
+            <div id="googleMap" style="width: 256px; height: 256px;"></div>
           </div>
         </div><!--/.col-xs-12-->
       </div><!--/row-->
