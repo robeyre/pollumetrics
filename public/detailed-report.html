@@ -48,34 +48,6 @@
       <div class="row">
         <div class="col-xs-12">
           <div class="specific-measures">
-
-            <small>carbon dioxide (CO2)</small>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                <span class="sr-only">60% Complete</span>
-              </div>
-            </div>
-
-            <small>carbon dioxide (CO2)</small>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
-                <span class="sr-only">60% Complete</span>
-              </div>
-            </div>
-
-            <small>carbon dioxide (CO2)</small>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
-                <span class="sr-only">60% Complete</span>
-              </div>
-            </div>
-
-            <small>carbon dioxide (CO2)</small>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
-                <span class="sr-only">60% Complete</span>
-              </div>
-            </div>
           </div>
 
           <a class="btn btn-default" href="report.html" role="button">Back</a>
@@ -96,5 +68,30 @@
     <script src="components/bootstrap/assets/js/ie10-viewport-bug-workaround.js"></script>
 
     <script src="js/offcanvas.js"></script>
+    <script>
+        jQuery(function() {
+            jQuery.ajax('http://aeasolutions.co.uk/pollumetrics/public/get-nearest-index.php', {
+                jsonp: "jsonp",
+                dataType: "jsonp",
+                success: function (response) {
+                    jQuery('.specific-measures').append(
+                        '<small>Ozone</small><div class="progress"><div class="progress-bar" role="progressbar" aria-valuenow="' + response['Ozone'] + '0" aria-valuemin="0" aria-valuemax="100" style="width: ' + response['Ozone'] + '0%;"><span class="sr-only">' + response['Ozone'] + '</span></div></div>'
+                    );
+                    jQuery('.specific-measures').append(
+                        '<small>Nitrogen dioxide</small><div class="progress"><div class="progress-bar" role="progressbar" aria-valuenow="' + response['Nitrogen dioxide'] + '0" aria-valuemin="0" aria-valuemax="100" style="width: ' + response['Nitrogen dioxide'] + '0%;"><span class="sr-only">' + response['Nitrogen dioxide'] + '</span></div></div>'
+                    );
+                    jQuery('.specific-measures').append(
+                        '<small>Sulphur dioxide</small><div class="progress"><div class="progress-bar" role="progressbar" aria-valuenow="' + response['Sulphur dioxide'] + '0" aria-valuemin="0" aria-valuemax="100" style="width: ' + response['Sulphur dioxide'] + '0%;"><span class="sr-only">' + response['Sulphur dioxide'] + '</span></div></div>'
+                    );
+                    jQuery('.specific-measures').append(
+                        '<small>PM2.5 particles</small><div class="progress"><div class="progress-bar" role="progressbar" aria-valuenow="' + response['PM2.5 Particles'] + '0" aria-valuemin="0" aria-valuemax="100" style="width: ' + response['PM2.5 Particles'] + '0%;"><span class="sr-only">' + response['PM2.5 Particles'] + '</span></div></div>'
+                    );
+                    jQuery('.specific-measures').append(
+                        '<small>PM10 particles</small><div class="progress"><div class="progress-bar" role="progressbar" aria-valuenow="' + response['PM10 Particles'] + '0" aria-valuemin="0" aria-valuemax="100" style="width: ' + response['PM10 Particles'] + '0%;"><span class="sr-only">' + response['PM10 Particles'] + '</span></div></div>'
+                    );
+                }
+            });
+        });
+    </script>
   </body>
 </html>
